@@ -27,7 +27,7 @@ La blockchaing de Ethereum se compone de **cuentas** u **Smart Contracts** que p
 
 Son otra manera de ordenar los datos en Solidity.
 
-```sol
+```solidity
 // Para una aplicación financiera, guardamos un uint con el balance de su cuenta:
 mapping (address => uint) public accountBalance;
 // O podría usarse para guardar / ver los usuarios basados en un userId
@@ -42,7 +42,7 @@ Variable global que posee la dirección **address** del contrato.
 
 ### require.require
 
-```sol
+```solidity
 function sayHiToVitalik(string _name) public returns (string) {
   // Compara si _name es igual a "Vitalik". Lanza un error si no lo son.
   // (Nota: Solidity no tiene su propio comparador de strings, por lo que
@@ -59,7 +59,7 @@ De este modo require es muy útil a la hora de verificar que ciertas condiciones
 
 ### Herencia
 
-```sol
+```solidity
 contract Doge {
   function catchphrase() public returns (string) {
     return "So Wow CryptoDoge";
@@ -80,7 +80,7 @@ Esto puede usarse como una herencia lógica (como una subclase, un Gato es un An
 
 Nos permite importar otros contratos dentro de uno.
 
-```sol
+```solidity
 import "./someothercontract.sol";
 
 contract newContract is SomeOtherContract {
@@ -98,7 +98,7 @@ La mayoría del tiempo no necesitas usar estas palabras clave ya que Solidity la
 
 Aun así, hay momentos en los que necesitas usar estas palabras clave, concretamente cuando estes trabajando con structs y arrays dentro de las funciones:
 
-```sol
+```solidity
 // De modo que deberias declararlo como `storage`, así:
 Sandwich storage mySandwich = sandwiches[_index];
 // ...donde `mySandwich` es un apuntador a `sandwiches[_index]`
